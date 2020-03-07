@@ -5,18 +5,32 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { OrderBuilderComponent } from './order-builder/order-builder.component';
+import { OrderBuilderComponent } from './components/order-builder/order-builder.component';
+import { HomeComponent } from './components/home/home.component';
+import { PizzaGraphicComponent } from './components/pizza-graphic/pizza-graphic.component';
+
+import { ReactiveFormsModule } from '@angular/forms';
+
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    OrderBuilderComponent
+    OrderBuilderComponent,
+    HomeComponent,
+    PizzaGraphicComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    MatStepperModule,
+    MatInputModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
