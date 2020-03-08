@@ -6,6 +6,10 @@
             <mat-form-field>
                 <mat-label>Name</mat-label>
                 <input formControlName="name" matInput placeholder="Name for the order" />
+                <mat-error *ngIf="starterFormGroup.get('name').hasError('pattern') ||
+                starterFormGroup.get('name').hasError('required')">
+                    Please enter your real name
+                </mat-error>
             </mat-form-field>
             <mat-form-field>
                 <mat-label>Takeout or Delivery</mat-label>

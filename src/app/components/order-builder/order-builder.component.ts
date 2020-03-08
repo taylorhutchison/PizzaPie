@@ -20,10 +20,10 @@ export class OrderBuilderComponent implements OnInit {
     this.deliveryOptions = this.orderService.deliveryOptions;
 
     this.starterFormGroup = this.fb.group({
-      name: ['', [Validators.pattern(/[a-zA-Z]+/g), Validators.required]],
+      name: ['', [Validators.pattern(/^[a-zA-Z\s]+$/g), Validators.required]],
       option: ['', Validators.required]
     });
-    
+
     this.orderFormGroup = this.fb.group({
 
     });
