@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { OrderService } from 'src/app/services/order.service';
 
 @Component({
   selector: 'app-order-builder',
@@ -8,17 +9,23 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class OrderBuilderComponent implements OnInit {
 
-  firstFormGroup: FormGroup;
-  secondFormGroup: FormGroup;
+  starterFormGroup: FormGroup;
+  orderFormGroup: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  deliveryOptions: string[];
+
+  constructor(private orderService: OrderService, private fb: FormBuilder) { }
 
   ngOnInit(): void {
-    this.firstFormGroup = this.fb.group({
-      firstCtrl: ['', Validators.required]
+    this.deliveryOptions = this.orderService.deliveryOptions;
+
+    this.starterFormGroup = this.fb.group({
+      name: ['', [Validators.pattern(/[a-zA-Z]+/g), Validators.required]],
+      option: ['', Validators.required]
     });
-    this.secondFormGroup = this.fb.group({
-      secondCtrl: ['', Validators.required]
+    
+    this.orderFormGroup = this.fb.group({
+
     });
   }
 
