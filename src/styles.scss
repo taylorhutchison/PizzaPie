@@ -16,7 +16,7 @@ $PizzaPie-primary: mat-palette($mat-green, 900);
 $PizzaPie-accent: mat-palette($mat-red, 700);
 
 // The warn palette is optional (defaults to red).
-$PizzaPie-warn: mat-palette($mat-grey, 900);
+$PizzaPie-warn: mat-palette($mat-red, 900);
 
 // Create the theme object (a Sass map containing all of the palettes).
 $PizzaPie-theme: mat-light-theme($PizzaPie-primary, $PizzaPie-accent, $PizzaPie-warn);
